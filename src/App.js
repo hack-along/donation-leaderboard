@@ -267,16 +267,15 @@ class App extends Component {
       <div className="App container-fluid">
         <div
           {...responsiveness}
-          className="flex-row d-flex justify-content-around"
+          className="flex-row d-flex justify-content-around background-color"
         >
           <div className="flex-column introColumn">
             <img
-              src="/img/placeholder-banner.svg"
+              src="/img/logo.svg"
               className="typelogo img-fluid"
-              alt="Banner Placeholder"
+              alt="Giveth Logo"
             />
             <div className="introContainer">
-              <h1>Donation Leaderboard</h1>
               <p>To deploy your own leaderboard:</p>
               <ol>
                 <li>
@@ -353,7 +352,7 @@ class App extends Component {
             )}
             <hr />
             <h4>Privately: Send directly to the donation address</h4>
-            <img src="/img/placeholder-qr.svg" className="qr-code" />
+            <img src="/img/giveth-qr.svg" className="qr-code" />
             <div className="word-wrap">
               <strong>{donationAddress}</strong>
             </div>
