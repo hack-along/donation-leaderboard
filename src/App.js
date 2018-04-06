@@ -343,7 +343,7 @@ class App extends Component {
                     placeholder="ETH to donate"
                     name="amount"
                   />
-                  <input type="text" placeholder="message" name="message" />
+                  <input type="text" placeholder="Message" name="message" />
                   <button className="btn btn-primary">Send</button>
                 </form>
               </div>
@@ -366,7 +366,7 @@ class App extends Component {
                 <th>Rank</th>
                 <th>Address</th>
                 <th>Value</th>
-                <th>message</th>
+                <th>Message</th>
                 <th>Tx Link</th>
               </tr>
             </thead>
