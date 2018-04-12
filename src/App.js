@@ -380,21 +380,6 @@ class App extends Component {
                   by the Unicorns at Giveth
                 </li>
               </ol>
-            </div>>
-            <div {...responsiveness} className="flex-row d-flex amount">
-              <div className="flex-column margin">
-                <strong>Amount donated </strong>
-                <h3>{this.state.totalAmount} ETH</h3>
-              </div>
-              <div className="flex-column margin">
-                <form className="Search">
-                  <input
-                    type="text"
-                    onChange={this.onSearchChange}
-                    placeholder="filter leaderboard"
-                  />
-                </form>
-              </div>
             </div>
           </div>
 
@@ -434,6 +419,22 @@ class App extends Component {
             <div className="word-wrap">
               <strong className="donation-address">{donationAddress}</strong>
             </div>
+          </div>
+        </div>
+
+        <div {...responsiveness} className="flex-row d-flex amount">
+          <div className="flex-column margin">
+            <strong>Amount donated </strong>
+            <h3>{this.state.totalAmount} ETH</h3>
+          </div>
+          <div className="flex-column margin">
+            <form className="Search">
+              <input
+                type="text"
+                onChange={this.onSearchChange}
+                placeholder="filter leaderboard"
+              />
+            </form>
           </div>
         </div>
 
