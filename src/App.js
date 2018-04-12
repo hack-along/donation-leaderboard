@@ -25,8 +25,6 @@ const isSearched = searchTerm => item =>
 
 var myweb3;
 
-var FontAwesome = require("react-fontawesome");
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -335,8 +333,8 @@ class App extends Component {
                       fixedWidth
                     />
                     <div className="margin-left">
-                      This event is by invitation only! Thanks to the sponsors:
-                      L4
+                      This event is by invitation only! Thanks to the sponsors
+                      and donors.
                     </div>
                   </div>
                 </li>
@@ -366,9 +364,23 @@ class App extends Component {
                     <div className="margin-left">Toronto, Canada.</div>
                   </div>
                 </li>
+                <hr />
+                <li style={{ textAlign: "center" }}>
+                  By donating you support open source projects like this{" "}
+                  <a href="https://github.com/giveth/donation-leaderboard">
+                    donation leaderboard application
+                  </a>.
+                  <br /> Made with{" "}
+                  <FontAwesomeIcon
+                    icon="heart"
+                    className="icon"
+                    size="2x"
+                    fixedWidth
+                  />{" "}
+                  by the Unicorns at Giveth
+                </li>
               </ol>
-            </div>
-
+            </div>>
             <div {...responsiveness} className="flex-row d-flex amount">
               <div className="flex-column margin">
                 <strong>Amount donated </strong>
