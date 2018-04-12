@@ -333,8 +333,8 @@ class App extends Component {
                       fixedWidth
                     />
                     <div className="margin-left">
-                      This event is by invitation only! Thanks to the sponsors
-                      and donors.
+                      This event is by invitation only! We want to thank the
+                      hosts, sponsors and donors.
                     </div>
                   </div>
                 </li>
