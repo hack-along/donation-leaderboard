@@ -292,31 +292,6 @@ class App extends Component {
                 <li>
                   <div className="media">
                     <FontAwesomeIcon
-                      icon="clock"
-                      className="icon"
-                      size="2x"
-                      fixedWidth
-                    />
-                    <div className="margin-left">
-                      Mon, Apr 30 - Wed, May 2 (immediately preceding EdCon
-                      2018)
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="media">
-                    <FontAwesomeIcon
-                      icon="map-marker"
-                      className="icon"
-                      size="2x"
-                      fixedWidth
-                    />
-                    <div className="margin-left">Toronto, Canada.</div>
-                  </div>
-                </li>
-                <li>
-                  <div className="media">
-                    <FontAwesomeIcon
                       icon="clipboard-list"
                       className="icon"
                       size="2x"
@@ -363,6 +338,32 @@ class App extends Component {
                       This event is by invitation only! Thanks to the sponsors:
                       L4
                     </div>
+                  </div>
+                </li>
+                <hr/>
+                <li>
+                  <div className="media">
+                    <FontAwesomeIcon
+                      icon="clock"
+                      className="icon"
+                      size="2x"
+                      fixedWidth
+                    />
+                    <div className="margin-left">
+                      Mon, Apr 30 - Wed, May 2 (immediately preceding EdCon
+                      2018)
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="media">
+                    <FontAwesomeIcon
+                      icon="map-marker"
+                      className="icon"
+                      size="2x"
+                      fixedWidth
+                    />
+                    <div className="margin-left">Toronto, Canada.</div>
                   </div>
                 </li>
               </ol>
