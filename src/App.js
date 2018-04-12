@@ -330,8 +330,8 @@ class App extends Component {
                       agree on, hopefully going further and laying out a
                       decision-making process to address the philosophical side
                       of Ethereum ecosystem governance.{" "}
-                      <a href="https://github.com/dappnode">
-                        LINK TO SOMETHING
+                      <a href="https://github.com/ethereum/EIPs">
+                        The Ethereum Improvement Proposal
                       </a>
                     </div>
                   </div>
@@ -360,7 +360,8 @@ class App extends Component {
                       fixedWidth
                     />
                     <div className="margin-left">
-                      This event is by invitation only!
+                      This event is by invitation only! Thanks to the sponsors:
+                      L4
                     </div>
                   </div>
                 </li>
