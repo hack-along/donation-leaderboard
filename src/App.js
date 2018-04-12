@@ -298,7 +298,7 @@ class App extends Component {
                       fixedWidth
                     />
                     <div className="margin-left">
-                      The goal of this event is to evaluate on-chain and
+                      The goal of this event is to discuss on-chain and
                       off-chain governance and ideally come to terms on
                       constituting an “EIP0” document a.k.a. a “first Etherean
                       constitution” stating values and principles that we all
@@ -340,7 +340,7 @@ class App extends Component {
                     </div>
                   </div>
                 </li>
-                <hr/>
+                <hr />
                 <li>
                   <div className="media">
                     <FontAwesomeIcon
