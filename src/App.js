@@ -395,6 +395,7 @@ class App extends Component {
                   Publicly: Send a transaction via Metamask with your Team Name
                   as a message{" "}
                 </h4>
+                {}
 
                 <form {...hiddenOnMobile} onSubmit={this.handleDonate}>
                   <input
