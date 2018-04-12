@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+
 import "./App.css";
 
 import { css } from "glamor";
@@ -9,7 +11,7 @@ import Emojify from "react-emojione";
 
 const donationNetworkID = 1; // make sure donations only go through on this network.
 
-const donationAddress = "0x00cf36853aa4024fb5bf5cc377dfd85844b411a0"; //replace with the address to watch
+const donationAddress = "0x055D0b8e377eb6977AA49A26FD3345209aF9E714"; //replace with the address to watch
 const apiKey = "6DIUB7X6S92YJR6KXKF8V8ZU55IXT5PN2S"; //replace with your own key
 
 const etherscanApiLink =
@@ -265,6 +267,14 @@ class App extends Component {
       }
     });
 
+    const responsiveOl = css({
+      "@media (max-width: 1200px)": {
+        "padding-left": "0.5rem",
+        "padding-right": "0.5rem",
+        "max-width": "100%"
+      }
+    });
+
     return (
       <div className="App container-fluid">
         <div
@@ -273,54 +283,84 @@ class App extends Component {
         >
           <div className="flex-column introColumn">
             <img
-              src="/img/dappnode-logo.svg"
+              src="/img/eip0-logo.svg"
               className="typelogo img-fluid"
-              alt="DAppNode Logo"
+              alt="eip0 logo"
             />
             <div className="introContainer">
-              <p>
-                DAppNode is currently in development and is poised to put new
-                possibilities of decentralized online activity into the hands of
-                everybody.
-              </p>
-
-              <ol>
+              <ol {...responsiveOl}>
                 <li>
                   <div className="media">
-                    <FontAwesome className="icon" name="github" size="2x" />
-                    <div className="margin-left">
-                      Built in an open-source community fashion on{" "}
-                      <a href="https://github.com/dappnode">Github</a>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="media">
-                    <img
-                      src="/img/giveth-logo-darkgrey.svg"
-                      className="img-fluid icon"
-                      alt="Giveth Logo"
+                    <FontAwesomeIcon
+                      icon="clock"
+                      className="icon"
+                      size="2x"
+                      fixedWidth
                     />
                     <div className="margin-left">
-                      Supported by <a href="https://giveth.io">Giveth</a>
+                      Mon, Apr 30 - Wed, May 2 (immediately preceding EdCon
+                      2018)
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="media">
-                    <FontAwesome name="medium" size="2x" />
+                    <FontAwesomeIcon
+                      icon="map-marker"
+                      className="icon"
+                      size="2x"
+                      fixedWidth
+                    />
+                    <div className="margin-left">Toronto, Canada.</div>
+                  </div>
+                </li>
+                <li>
+                  <div className="media">
+                    <FontAwesomeIcon
+                      icon="clipboard-list"
+                      className="icon"
+                      size="2x"
+                      fixedWidth
+                    />
                     <div className="margin-left">
-                      Stay tuned for updates on{" "}
-                      <a href="https://medium.com/giveth">Medium</a>
+                      The goal of this event is to evaluate on-chain and
+                      off-chain governance and ideally come to terms on
+                      constituting an “EIP0” document a.k.a. a “first Etherean
+                      constitution” stating values and principles that we all
+                      agree on, hopefully going further and laying out a
+                      decision-making process to address the philosophical side
+                      of Ethereum ecosystem governance.{" "}
+                      <a href="https://github.com/dappnode">
+                        LINK TO SOMETHING
+                      </a>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="media">
-                    <FontAwesome name="heart" size="2x" />
+                    <FontAwesomeIcon
+                      icon="ticket-alt"
+                      className="icon"
+                      size="2x"
+                      fixedWidth
+                    />
                     <div className="margin-left">
-                      By donating to this project, you directly fund the
-                      developers of DAppNode.
+                      The event is self funded, please signal your attendence by
+                      submitting a {""}
+                      <strong>minimum donation of 1 ETH</strong>.
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="media">
+                    <FontAwesomeIcon
+                      icon="envelope"
+                      className="icon"
+                      size="2x"
+                      fixedWidth
+                    />
+                    <div className="margin-left">
+                      This event is by invitation only!
                     </div>
                   </div>
                 </li>
@@ -364,7 +404,7 @@ class App extends Component {
                     name="amount"
                   />
                   <input type="text" placeholder="Message" name="message" />
-                  <button className="btn btn-warning">Send</button>
+                  <button className="btn btn-secondary">Send</button>
                 </form>
               </div>
             ) : (
@@ -373,12 +413,12 @@ class App extends Component {
             <hr />
             <h4>Privately: Send directly to the donation address</h4>
             <img
-              src="/img/dappnode-qr.svg"
+              src="/img/eip0-qr.svg"
               className="qr-code"
               alt="Donation QR Code"
             />
             <div className="word-wrap">
-              <strong className="color-main-accent">{donationAddress}</strong>
+              <strong className="donation-address">{donationAddress}</strong>
             </div>
           </div>
         </div>
