@@ -320,7 +320,7 @@ class App extends Component {
                     <div className="margin-left">
                       The event is self funded, please signal your attendence by
                       submitting a {""}
-                      <strong>minimum donation of 1 ETH</strong>.
+                      <strong>minimum donation of 0.5 ETH</strong>.
                     </div>
                   </div>
                 </li>
