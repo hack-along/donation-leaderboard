@@ -341,7 +341,11 @@ class App extends Component {
             </div>
           </div>
           <div className="flex-column donationColumn">
-            <img src="/img/ways-to-donate.svg" className="typelogo img-fluid" />
+            <img
+              src="/img/ways-to-donate.svg"
+              className="typelogo img-fluid"
+              alt=""
+            />
             {candonate ? (
               <div>
                 <h4 {...hiddenOnMobile}>
@@ -364,13 +368,16 @@ class App extends Component {
             )}
             <hr />
             <h4>Privately: Send directly to the donation address</h4>
-            <img src="/img/scalingnow-qr.svg" className="qr-code" />
+            <img
+              src="/img/scalingnow-qr.svg"
+              className="qr-code"
+              alt="qr code"
+            />
             <div className="word-wrap">
               <strong>{donationAddress}</strong>
             </div>
           </div>
         </div>
-
         <div className="flex-column leaderboard">
           <table className="table">
             <thead className="pagination-centered">
@@ -407,7 +414,7 @@ class App extends Component {
                 ))}
             </tbody>
           </table>
-        </div>
+        </div>npm
       </div>
     );
   }; // End of render()
