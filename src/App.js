@@ -18,6 +18,19 @@ const etherscanApiLink =
   "&startblock=0&endblock=99999999&sort=asc&apikey=" +
   apiKey;
 
+const etherscanApiLinks = {
+  extTx:
+    "https://api.etherscan.io/api?module=account&action=txlistinternal&address=" +
+    donationAddress +
+    "&startblock=0&endblock=99999999&sort=asc&apikey=" +
+    apiKey,
+  intTx:
+    "https://api.etherscan.io/api?module=account&action=txlist&address=" +
+    donationAddress +
+    "&startblock=0&endblock=99999999&sort=asc&apikey=" +
+    apiKey
+};
+
 const isSearched = searchTerm => item =>
   item.from.toLowerCase().includes(searchTerm.toLowerCase());
 
@@ -106,10 +119,16 @@ class App extends Component {
   };
 
   getAccountData = () => {
-    return fetch(`${etherscanApiLink}`)
-      .then(originalResponse => originalResponse.json())
+    let fetchCalls = [
+      fetch(`${etherscanApiLinks.extTx}`),
+      fetch(`${etherscanApiLinks.intTx}`)
+    ];
+    return Promise.all(fetchCalls)
+      .then(res => {
+        return Promise.all(res.map(apiCall => apiCall.json()));
+      })
       .then(responseJson => {
-        return responseJson.result;
+        return [].concat.apply(...responseJson.map(res => res.result));
       });
   };
 
@@ -383,9 +402,12 @@ class App extends Component {
                     <td>{item.from} </td>
                     <td>{myweb3.utils.fromWei(item.value)} ETH</td>
                     <td>
-                      <Emojify>{myweb3.utils.hexToAscii(item.input)}</Emojify>
+                      <Emojify>
+                        {item.input.length &&
+                          myweb3.utils.hexToAscii(item.input)}
+                      </Emojify>
                     </td>
-                    <td>
+                    <td className="table-tx-header">
                       {item.hash.map((txHash, index) => (
                         <a
                           key={index}
