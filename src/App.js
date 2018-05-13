@@ -329,7 +329,11 @@ class App extends Component {
           </div>
 
           <div className="flex-column donationColumn">
-            <img src="/img/ways-to-donate.svg" className="typelogo img-fluid" />
+            <img
+              src="/img/ways-to-donate.svg"
+              className="typelogo img-fluid"
+              alt=""
+            />
             {candonate ? (
               <div>
                 <h4 {...hiddenOnMobile}>
@@ -352,7 +356,7 @@ class App extends Component {
             )}
             <hr />
             <h4>Privately: Send directly to the donation address</h4>
-            <img src="/img/giveth-qr.svg" className="qr-code" />
+            <img src="/img/giveth-qr.svg" className="qr-code" alt="" />
             <div className="word-wrap">
               <strong>{donationAddress}</strong>
             </div>
