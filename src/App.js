@@ -12,12 +12,6 @@ const donationNetworkID = 1; // make sure donations only go through on this netw
 const donationAddress = "0x5ADF43DD006c6C36506e2b2DFA352E60002d22Dc"; //replace with the address to watch
 const apiKey = "6DIUB7X6S92YJR6KXKF8V8ZU55IXT5PN2S"; //replace with your own key
 
-const etherscanApiLink =
-  "https://api.etherscan.io/api?module=account&action=txlist&address=" +
-  donationAddress +
-  "&startblock=0&endblock=99999999&sort=asc&apikey=" +
-  apiKey;
-
 const etherscanApiLinks = {
   extTx:
     "https://api.etherscan.io/api?module=account&action=txlistinternal&address=" +
