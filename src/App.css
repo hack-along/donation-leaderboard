@@ -145,6 +145,10 @@ thead {
   overflow-x: auto;
 }
 
+.table-tx-header {
+  max-width: 15vw;
+}
+
 .qr-code {
   width: 15vw;
   height: auto;
