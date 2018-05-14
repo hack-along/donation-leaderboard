@@ -9,7 +9,7 @@ import Emojify from "react-emojione";
 
 const donationNetworkID = 1; // make sure donations only go through on this network.
 
-const donationAddress = "0x00cf36853aa4024fb5bf5cc377dfd85844b411a0"; //replace with the address to watch
+const donationAddress = "0x37f25BD26848cf02614C29338dd71A4D03b62218"; //replace with the address to watch
 const apiKey = "6DIUB7X6S92YJR6KXKF8V8ZU55IXT5PN2S"; //replace with your own key
 
 const etherscanApiLinks = {
@@ -294,33 +294,34 @@ class App extends Component {
           {...responsiveness}
           className="flex-row d-flex justify-content-around header"
         >
-          <img
-            src="/img/dappnode-logo.svg"
-            className="typelogo img-fluid"
-            alt="DAppNode Logo"
-          />
+          <div
+            id="main-name"
+            className="flex-column d-flex justify-content-center"
+          >
+            <img
+              src="https://journal.burningman.org/wp-content/uploads/2014/04/Burning-Man-logo.png"
+              className="typelogo img-fluid"
+              alt="DAppNode Logo"
+            />
+            <h1>CAMP DECENTRAL</h1>
+          </div>
 
           <div {...responsiveness} id="intro-text" className="flex-row d-flex">
             <div class="media">
               <div class="media-body">
-                <h5 class="mt-0">Goal</h5>
-                The goal of DAppNode is to make it easy for users to run their
-                own personalized nodes and choose the DApps that run on top of
-                it. Nodes can connect to each other and form a decentralized
-                network.
+                <h5 class="mt-0">Decentralize all the things!</h5>
+                Burning Man is a social experiment with radical sharing, it is a
+                fascinating playground for impromtu economies and our mission is
+                to bring the blockchain to the burn and vice versa.
               </div>
             </div>
             <div class="media">
-              <FontAwesome
-                class="mr-3"
-                name="ethereum"
-                alt="Generic placeholder image"
-              />
               <div class="media-body">
-                <h5 class="mt-0">Technology</h5>
-                DAppNode is available as a linux image - ready for install on
-                any pc, server or virtual machine. It creates an Ethereum node
-                and offers easy deployment of DApps on top of your node.
+                <h5 class="mt-0">Motto</h5>
+                Camp Decentral was run as a Giveth campaign by longtime burner
+                and decentralization enthusiast Griff in 2017. Be ready for the
+                second edition in talks and original thinking about transforming
+                modern society to a post-industrialist plan-b type situation.
               </div>
             </div>
           </div>
@@ -334,56 +335,16 @@ class App extends Component {
           >
             <li {...maxOnMobile} className="card text-center">
               <div className="card-header">
-                <FontAwesome name="github" size="5x" />
+                <FontAwesome name="exclamation" size="5x" />
               </div>
               <div className="card-body">
                 <div className="card-text">
-                  DAppNode is currently in open-source development on{" "}
-                  <a href="https://github.com/dappnode">Github</a>
-                </div>
-              </div>
-            </li>
-            <li {...maxOnMobile} className="card text-center">
-              <div className="card-header">
-                <FontAwesome name="download" size="5x" />
-              </div>
-              <div className="card-body">
-                <div className="card-text">
-                  Try it yourself!{" "}
-                  <a
-                    href="https://github.com/dappnode"
-                    className="btn btn-warning"
-                  >
-                    Install
+                  You will need a ticket for Burning Man! To get a ticket,
+                  please refer to the Internet and mostly the main Burning Man
+                  Website<br />
+                  <a href="https://burningman.org/" className="btn btn-light">
+                    Official Website
                   </a>
-                </div>
-              </div>
-            </li>
-            <li {...maxOnMobile} className="card text-center">
-              <div className="card-header">
-                <img
-                  src="/img/giveth-logo-black.svg"
-                  className="icon"
-                  alt="Giveth Logo"
-                />
-              </div>
-              <div className="card-body">
-                <div className="card-text">
-                  Transparently tracking contributor payouts via a campaign on{" "}
-                  <a href="https://alpha.giveth.io/campaigns/OcKJryNwjeidMXi9">
-                    Giveth <strong>Alpha</strong>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li {...maxOnMobile} className="card text-center">
-              <div className="card-header">
-                <FontAwesome name="wikipedia-w" size="5x" />
-              </div>
-              <div className="card-body">
-                <div className="card-text">
-                  For more details, please visit the{" "}
-                  <a href="https://github.com/dappnode/DAppNode/wiki">Wiki</a>
                 </div>
               </div>
             </li>
@@ -397,24 +358,85 @@ class App extends Component {
               </div>
               <div className="card-body">
                 <div className="card-text">
-                  Talk to us on{" "}
+                  If you <strong>have a ticket</strong> and are interested to{" "}
+                  <strong>join camp decentral</strong> at burning man, join us
+                  in our chatroom and say "Hello!" on<br />
                   <a
-                    href="https://riot.im/app/#/room/#DAppNode:matrix.org"
-                    className="btn btn-warning"
+                    href="https://riot.im/app/#/room/#DECENTRAL:matrix.org"
+                    className="btn btn-success"
                   >
                     Riot.im
                   </a>
                 </div>
               </div>
             </li>
+
+            <li {...maxOnMobile} className="card text-center">
+              <div className="card-header">
+                <FontAwesome name="bell" size="5x" />
+              </div>
+              <div className="card-body">
+                <div className="card-text">
+                  Once you are invited by us, we need you to fill out a form for
+                  our organizational purposes.<br />
+                  <strong>NO EXCEPTIONS!!!</strong>
+                  <br />
+                  <a
+                    href="https://goo.gl/forms/xM3N5fLpYas8t98t1"
+                    className="btn btn-danger"
+                  >
+                    Application FORM
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li {...maxOnMobile} className="card text-center">
+              <div className="card-header">
+                <FontAwesome name="smile" size="5x" />
+              </div>
+              <div className="card-body">
+                <div className="card-text">
+                  Finally, to <strong>lock down your spot</strong>, please cover
+                  the dues of <strong>1 ETH</strong> per person - instructions
+                  and address to the right.<br />
+                </div>
+              </div>
+            </li>
+            <li {...maxOnMobile} className="card text-center">
+              <div className="card-header">
+                <img
+                  src="/img/giveth-logo-black.svg"
+                  className="icon"
+                  alt="Giveth Logo"
+                />
+              </div>
+              <div className="card-body">
+                <div className="card-text">
+                  Camp Decentral is being run in the second year as a campaign
+                  with the Giveth platform - Transparently tracking campees
+                  pay-ins and outs (coming soon!)<br />
+                  <a href="https://alpha.giveth.io/" className="btn btn-light">
+                    Giveth <strong>Alpha</strong>
+                  </a>
+                </div>
+              </div>
+            </li>
+
             <li {...maxOnMobile} className="card text-center">
               <div className="card-header">
                 <FontAwesome name="heart" size="5x" />
               </div>
               <div className="card-body">
                 <div className="card-text">
-                  By donating to this project, you directly fund the development
-                  of DAppNode.
+                  We are so happy you joined us. Let's have a wonderful burning
+                  man together. Please don't forget to check Riot chat. If it is
+                  your first time at the burn, here are some tips.
+                  <a
+                    href="https://burningman.org/event/preparation/first-timers-guide/"
+                    className="btn btn-light"
+                  >
+                    Official Guide
+                  </a>
                 </div>
               </div>
             </li>
@@ -443,7 +465,7 @@ class App extends Component {
                     name="amount"
                   />
                   <input type="text" placeholder="Message" name="message" />
-                  <button className="btn btn-warning">Send</button>
+                  <button className="btn btn-danger">Send</button>
                 </form>
               </div>
             ) : (
@@ -452,9 +474,9 @@ class App extends Component {
             <hr />
             <h6>Privately: Send directly to the donation address</h6>
             <img
-              src="/img/dappnode-qr.svg"
+              src="/img/qr-decentral.svg"
               className="qr-code"
-              alt="Donation QR Code"
+              alt="Contribution QR Code"
             />
             <div className="word-wrap">
               <strong className="color-main-accent">{donationAddress}</strong>
@@ -464,7 +486,7 @@ class App extends Component {
 
         <div {...responsiveness} className="flex-row d-flex amount">
           <div className="flex-column margin">
-            <strong>Amount donated </strong>
+            <strong>Amount collected</strong>
             <h3>{this.state.totalAmount} ETH</h3>
           </div>
           <div className="flex-column margin">
