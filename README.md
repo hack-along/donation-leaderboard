@@ -10,6 +10,12 @@ Production ready!
 
 **Second instance deployed** - see [Giveth Donation Leaderboard](https://leaderboard.giveth.io)
 
+**Third instance deployed** - see [EIP0 campaign](https://eip0.tk)
+
+**Fourth instance deployed** - see [DAppNode Donation Leaderboard](https://dappnode.io)
+
+**Fifth instance deployed** - see [Camp Decentral campaign](https://decentral.giveth.io)
+
 ## Important
 We use different branches to build out the leaderboard for different initiatives to **deploy directly from their branch**. If you are a contributor to a specific deploy please stay within that branch and don't commit back to *Master*.
 
