@@ -323,7 +323,9 @@ class App extends Component {
               </h4>
               <p>
                 This page uses the Giveth Donation address. By donating you
-                support open source projects like this one.{" "}
+                support open source projects like this one. All donations shown
+                here were given voluntarily and do not necessarily reflect any
+                affiliation or endorsement by Giveth.{" "}
                 <a href="https://giveth.io/donate/">More Info</a>
               </p>
             </div>
