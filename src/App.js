@@ -404,6 +404,22 @@ class App extends Component {
             </li>
             <li {...maxOnMobile} className="card text-center">
               <div className="card-header">
+                <FontAwesome name="question" size="5x" />
+              </div>
+              <div className="card-body">
+                <div className="card-text">
+                  You can find more detailed info on the Camp Decentral FAQ.<br />
+                  <a
+                    href="https://docs.google.com/document/d/195NoXL0nC1RJlED0nPJhVKu42qSGGUkv32AU_lqRT8M/edit?usp=sharing"
+                    className="btn btn-light"
+                  >
+                    Decentral FAQ
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li {...maxOnMobile} className="card text-center">
+              <div className="card-header">
                 <img
                   src="/img/giveth-logo-black.svg"
                   className="icon"
@@ -412,7 +428,7 @@ class App extends Component {
               </div>
               <div className="card-body">
                 <div className="card-text">
-                  Camp Decentral is being run in the second year as a campaign
+                  Camp Decentral is being run for the second year as a campaign
                   with the Giveth platform - Transparently tracking campees
                   pay-ins and outs (coming soon!)<br />
                   <a href="https://alpha.giveth.io/" className="btn btn-light">
