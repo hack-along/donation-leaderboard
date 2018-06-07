@@ -411,9 +411,26 @@ class App extends Component {
                   You can find more detailed info on the Camp Decentral FAQ.<br />
                   <a
                     href="https://docs.google.com/document/d/195NoXL0nC1RJlED0nPJhVKu42qSGGUkv32AU_lqRT8M/edit?usp=sharing"
-                    className="btn btn-light"
+                    className="btn btn-secondary"
                   >
                     Decentral FAQ
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li {...maxOnMobile} className="card text-center">
+              <div className="card-header">
+                <FontAwesome name="podcast" size="5x" />
+              </div>
+              <div className="card-body">
+                <div className="card-text">
+                  We host 80+ hours of talks on the Playa. To register as a
+                  speaker, please use the form below.<br />
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeAWacQH0ujMBTJkQozLegFqB8wpe6fifOKBqwg87p_RL29VQ/viewform"
+                    className="btn btn-secondary"
+                  >
+                    Speaker Sign-up
                   </a>
                 </div>
               </div>
