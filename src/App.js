@@ -9,7 +9,7 @@ import Emojify from "react-emojione";
 
 const donationNetworkID = 1; // make sure donations only go through on this network.
 
-const donationAddress = "0x5ADF43DD006c6C36506e2b2DFA352E60002d22Dc"; //replace with the address to watch
+const donationAddress = "0x5adf43dd006c6c36506e2b2dfa352e60002d22dc"; //replace with the address to watch
 const apiKey = "6DIUB7X6S92YJR6KXKF8V8ZU55IXT5PN2S"; //replace with your own key
 
 const etherscanApiLinks = {
