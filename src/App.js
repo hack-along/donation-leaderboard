@@ -411,7 +411,7 @@ class App extends Component {
                   You can find more detailed info on the Camp Decentral FAQ.<br />
                   <a
                     href="https://docs.google.com/document/d/195NoXL0nC1RJlED0nPJhVKu42qSGGUkv32AU_lqRT8M/edit?usp=sharing"
-                    className="btn btn-secondary"
+                    className="btn btn-info"
                   >
                     Decentral FAQ
                   </a>
@@ -428,7 +428,7 @@ class App extends Component {
                   speaker, please use the form below.<br />
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSeAWacQH0ujMBTJkQozLegFqB8wpe6fifOKBqwg87p_RL29VQ/viewform"
-                    className="btn btn-secondary"
+                    className="btn btn-info"
                   >
                     Speaker Sign-up
                   </a>
