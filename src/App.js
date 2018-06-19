@@ -5,28 +5,13 @@ import { css } from "glamor";
 
 import Web3 from "web3";
 
-import Emojify from "react-emojione";
+import Leaderboard from "./Leaderboard/Leaderboard";
 
 const donationNetworkID = 1; // make sure donations only go through on this network.
 
 const donationAddress = "0x5adf43dd006c6c36506e2b2dfa352e60002d22dc"; //replace with the address to watch
-const apiKey = "6DIUB7X6S92YJR6KXKF8V8ZU55IXT5PN2S"; //replace with your own key
-
-const etherscanApiLinks = {
-  extTx:
-    "https://api.etherscan.io/api?module=account&action=txlistinternal&address=" +
-    donationAddress +
-    "&startblock=0&endblock=99999999&sort=asc&apikey=" +
-    apiKey,
-  intTx:
-    "https://api.etherscan.io/api?module=account&action=txlist&address=" +
-    donationAddress +
-    "&startblock=0&endblock=99999999&sort=asc&apikey=" +
-    apiKey
-};
-
-const isSearched = searchTerm => item =>
-  item.from.toLowerCase().includes(searchTerm.toLowerCase());
+const deploymentBlock = "4448139";
+const leaderboardType = "leaderboard"; // can be a "leaderboard" or "multisig"
 
 var myweb3;
 
@@ -47,83 +32,6 @@ class App extends Component {
     this.setState({
       searchTerm: event.target.value
     });
-  };
-
-  subscribe = address => {
-    let ws = new WebSocket("wss://socket.etherscan.io/wshandler");
-
-    function pinger(ws) {
-      var timer = setInterval(function() {
-        if (ws.readyState === 1) {
-          ws.send(
-            JSON.stringify({
-              event: "ping"
-            })
-          );
-        }
-      }, 20000);
-      return {
-        stop: function() {
-          clearInterval(timer);
-        }
-      };
-    }
-
-    ws.onopen = function() {
-      this.setState({
-        socketconnected: true
-      });
-      pinger(ws);
-      ws.send(
-        JSON.stringify({
-          event: "txlist",
-          address: address
-        })
-      );
-    }.bind(this);
-    ws.onmessage = function(evt) {
-      let eventData = JSON.parse(evt.data);
-      console.log(eventData);
-      if (eventData.event === "txlist") {
-        let newTransactionsArray = this.state.transactionsArray.concat(
-          eventData.result
-        );
-        this.setState(
-          {
-            transactionsArray: newTransactionsArray
-          },
-          () => {
-            this.processEthList(newTransactionsArray);
-          }
-        );
-      }
-    }.bind(this);
-    ws.onerror = function(evt) {
-      this.setState({
-        socketerror: evt.message,
-        socketconnected: false
-      });
-    }.bind(this);
-    ws.onclose = function() {
-      this.setState({
-        socketerror: "socket closed",
-        socketconnected: false
-      });
-    }.bind(this);
-  };
-
-  getAccountData = () => {
-    let fetchCalls = [
-      fetch(`${etherscanApiLinks.extTx}`),
-      fetch(`${etherscanApiLinks.intTx}`)
-    ];
-    return Promise.all(fetchCalls)
-      .then(res => {
-        return Promise.all(res.map(apiCall => apiCall.json()));
-      })
-      .then(responseJson => {
-        return [].concat.apply(...responseJson.map(res => res.result));
-      });
   };
 
   handleDonate = event => {
@@ -251,18 +159,6 @@ class App extends Component {
       });
       myweb3 = new Web3();
     }
-
-    this.getAccountData().then(res => {
-      this.setState(
-        {
-          transactionsArray: res
-        },
-        () => {
-          this.processEthList(res);
-          this.subscribe(donationAddress);
-        }
-      );
-    });
   };
 
   render = () => {
@@ -270,7 +166,7 @@ class App extends Component {
 
     const responsiveness = css({
       "@media(max-width: 700px)": {
-        "flex-wrap": "wrap"
+        flexWrap: "wrap"
       }
     });
 
@@ -328,26 +224,14 @@ class App extends Component {
                 <a href="https://giveth.io/donate/">More Info</a>
               </p>
             </div>
-
-            <div {...responsiveness} className="flex-row d-flex amount">
-              <div className="flex-column margin">
-                <strong>Amount donated </strong>
-                <h3>{this.state.totalAmount} ETH</h3>
-              </div>
-              <div className="flex-column margin">
-                <form className="Search">
-                  <input
-                    type="text"
-                    onChange={this.onSearchChange}
-                    placeholder="filter leaderboard"
-                  />
-                </form>
-              </div>
-            </div>
           </div>
 
           <div className="flex-column donationColumn">
-            <img src="/img/ways-to-donate.svg" className="typelogo img-fluid" />
+            <img
+              src="/img/ways-to-donate.svg"
+              className="typelogo img-fluid"
+              alt="donate"
+            />
             {candonate ? (
               <div>
                 <h4 {...hiddenOnMobile}>
@@ -370,7 +254,11 @@ class App extends Component {
             )}
             <hr />
             <h4>Privately: Send directly to the donation address</h4>
-            <img src="/img/placeholder-qr.svg" className="qr-code" />
+            <img
+              src="/img/placeholder-qr.svg"
+              className="qr-code"
+              alt="qr-code"
+            />
             <div className="word-wrap">
               <strong>{donationAddress}</strong>
             </div>
@@ -378,44 +266,11 @@ class App extends Component {
         </div>
 
         <div className="flex-column leaderboard">
-          <table className="table">
-            <thead className="pagination-centered">
-              <tr>
-                <th>Rank</th>
-                <th>Address</th>
-                <th>Value</th>
-                <th>Message</th>
-                <th>Tx Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.ethlist
-                .filter(isSearched(this.state.searchTerm))
-                .map(item => (
-                  <tr key={item.hash} className="Entry">
-                    <td>{item.rank} </td>
-                    <td>{item.from} </td>
-                    <td>{myweb3.utils.fromWei(item.value)} ETH</td>
-                    <td>
-                      <Emojify>
-                        {item.input.length &&
-                          myweb3.utils.hexToAscii(item.input)}
-                      </Emojify>
-                    </td>
-                    <td className="table-tx-header">
-                      {item.hash.map((txHash, index) => (
-                        <a
-                          key={index}
-                          href={"https://etherscan.io/tx/" + txHash}
-                        >
-                          [{index + 1}]
-                        </a>
-                      ))}
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          <Leaderboard
+            address={donationAddress}
+            deploymentBlock={deploymentBlock}
+            type={leaderboardType}
+          />
         </div>
       </div>
     );
