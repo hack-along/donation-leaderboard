@@ -72,7 +72,6 @@ function ParseEvents(events) {
   return Promise.all(
     events.map(tx =>
       web3local.eth.getTransaction(tx.transactionHash).then(txData => {
-        console.log("TXDATA", tx.returnValues[params.eventVarName], txData, tx);
         return {
           address: tx.returnValues.sender,
           value: web3local.utils.fromWei(
