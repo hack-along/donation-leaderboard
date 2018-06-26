@@ -41,10 +41,6 @@ h4, h6 {
   text-align: center;
 }
 
-hr {
-  background-color: white;
-}
-
 input {
   margin: 0.5rem;
 }
@@ -93,7 +89,6 @@ thead {
 }
 
 .container-fluid {
-  background-color: white;
   padding: 0px;
   margin: 0px;
   max-width: 99vw;
@@ -107,7 +102,7 @@ thead {
   margin: 2rem, 2.5rem, 2rem, 2.5rem;
 }
 
-.row, .flex-row {
+.row, .flex-row, .flex-column {
   max-width: 99vw;
 }
 
@@ -239,7 +234,7 @@ thead {
     border-radius: 1rem;
     font-size: 2rem;
     color: whitesmoke;
-    background-color: #28a098;
+    background-color: #472F6D;
   }
   
   .Collapsible__contentOuter {
@@ -257,12 +252,7 @@ thead {
 /** Copied from donation website **/
 
 #donation-hero {
-  height: 60vh;
-  background-image: url('https://images.unsplash.com/photo-1500320821405-8fc1732209ca?auto=format&fit=crop&w=1500&q=80');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  height: 40vh;
   margin: none;
 }
 
@@ -270,6 +260,7 @@ thead {
 #donation-hero  h1 {
     padding-top: 15vh;
     padding-bottom: 10vh;
+    color: #472F6D;
   }
 
   #donation-hero  p {
@@ -326,28 +317,23 @@ thead {
 #benefits p {
     margin-left: 1rem;
     padding: 0.5rem;
+    display: block;
   }
 
-
-  #benefits p {
-   display: block;
-  }
-
-  #benefits  li {
-    list-style: none;
-    margin-left: none;
-  }
+#benefits  li {
+  list-style: none;
+  margin-left: none;
+}
   
-  #benefits  .fa-fw {
-    margin-top: 0.5rem;
-    font-size: 2.5rem;
-  }
+#benefits  .fa-fw {
+  margin-top: 0.5rem;
+}
 
-  #benefits  @media(max-width: 1200px){
-    li {
-      min-width: 90vw;
-    }
+#benefits  @media(max-width: 1200px){
+  li {
+    min-width: 90vw;
   }
+}
 
 
 #etherglade {
@@ -393,10 +379,10 @@ thead {
   }
 
 
-.card-green {
+.donation-card {
   color: black;
   border-radius: 1rem;
-  background-color: #5CA43F;
+  background-color: #2c0d53;
   padding: 1rem;
   margin: 1rem;
 }
@@ -414,6 +400,10 @@ thead {
     max-width: 80vw;
   }
 
+.color-main-accent {
+  color: #472F6D;
+}
+
 
 #faq {
    padding-top: 10vh;
@@ -428,13 +418,13 @@ thead {
   justify-content: center;
 }
 
-.features  li {
+.features li  {
     padding: 0.5rem;
     margin: 0.5rem;
     display: block;
-    text-align: justify;
     border-radius: 1rem;
   }
+
 
 
 .card p {
@@ -474,7 +464,7 @@ thead {
   }
   
   .background-purple {
-    background-color: #2c0d53;
+    background-color: #2c144994;
   }
   
   .btn-secondary {
@@ -640,7 +630,7 @@ thead {
       min-width: 90%;
     }
   }
-  
+
   .github-icon {
     width: 10vw;
     height: auto;
@@ -928,4 +918,36 @@ thead {
   
 /** Copied from dappnode.css **/
 
-  
+.special {
+  color: rgb(126, 84, 194);
+  font-size: 4rem;
+}
+
+.word-wrap .color-main-accent a {
+  color: #fff255;
+  text-decoration: none;
+}
+
+.middleBlock {
+  padding-top: 2rem;
+  background-color: #2c1449c0;
+}
+
+.middleBlock h1 {
+  font-size: 4rem;
+  padding-top: 2rem;
+  font-weight: 800;
+  padding-bottom: 2rem;
+}
+
+.middleBlock h1 .special {
+  color: rgb(126, 84, 194);
+}
+
+.header-image {
+  background-image: url('https://images.unsplash.com/photo-1500320821405-8fc1732209ca?auto=format&fit=crop&w=1500&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}

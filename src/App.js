@@ -272,7 +272,7 @@ class App extends Component {
 
     const responsiveness = css({
       "@media(max-width: 700px)": {
-        "flex-wrap": "wrap"
+        flexWrap: "wrap"
       }
     });
 
@@ -289,7 +289,7 @@ class App extends Component {
     });
 
     return (
-      <div className="App container-fluid">
+      <div className="App container-fluid header-image">
         <header id="header">
           <nav className="navbar navbar-expand-lg navbar-dark fixed-top navbar-color">
             <a className="navbar-brand" href="../#">
@@ -347,7 +347,7 @@ class App extends Component {
           </nav>
         </header>
 
-        <main className="container-fluid background-white-transparent">
+        <main className="container-fluid">
           <section id="donation-hero">
             <div className="flex-row justify-content-center">
               <div className="flex-column justify-content-center color-white">
@@ -360,11 +360,11 @@ class App extends Component {
 
           <div
             {...responsiveness}
-            className="flex-row d-flex justify-content-around background-color first"
+            className="flex-row d-flex justify-content-around first middleBlock"
           >
             <div
               {...responsiveness}
-              className="flex-row d-flex middleBlock justify-content-around"
+              className="flex-row d-flex justify-content-around"
             >
               <div
                 {...maxOnMobile}
@@ -374,9 +374,10 @@ class App extends Component {
                   Ways to <span className="special">Donate</span>
                 </h1>
                 <p>
-                  Development for DAppNode is exclusively done in an open-source
-                  fashion. You can donate directly to development via MetaMask
-                  or sending ETH to the donation address.
+                  Development for Giveth is exclusively done in an incentivized
+                  open-source fashion. You can donate directly to development
+                  via MetaMask or sending ETH to the donation address. Donations
+                  are used to build the Giveth DAC and the Giveth DApp.
                 </p>
                 {candonate ? (
                   <div>
@@ -417,7 +418,10 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <div {...responsiveness} className="flex-row d-flex amount bg-blue">
+          <div
+            {...responsiveness}
+            className="flex-row d-flex amount background-white"
+          >
             <div className="flex-column margin">
               <strong>Amount donated </strong>
               <h3 className="color-main-accent">
@@ -428,7 +432,7 @@ class App extends Component {
 
           <div
             {...responsiveness}
-            className="flex-row d-flex justify-content-around"
+            className="flex-row d-flex justify-content-around background-white"
           >
             <div className="flex-column leaderboard">
               <Collapsible trigger="Show the leaderboard">
@@ -505,49 +509,54 @@ class App extends Component {
               <li id="benefits" className="text-block">
                 <h3>Benefits</h3>
                 <div className="flex-column">
-                  <div className="flex-row d-flex">
+                  <div className="media">
                     <FontAwesome
                       name="pied-piper"
                       size="2x"
-                      className="fa-fw"
+                      className="fa-fw icon"
+                      pull="left"
                     />
-                    <p>
+                    <p className="media-body">
                       You automatically become a part of the Giveth DAC, you are
                       a <strong>Unicorn</strong> now!
                     </p>
                   </div>
-                  <div className="flex-row d-flex">
+                  <div className="media">
                     <img
                       src="/img/ethereum.svg"
-                      width="auto"
-                      height="46px"
+                      width="45px"
+                      height="45px"
                       alt=""
                     />
-                    <p>
-                      You are entitled to <strong>Giveth Tokens</strong> (see{" "}
+                    <p className="media-body">
+                      You receive <strong>Giveth Tokens</strong> (see{" "}
                       <a href="#faq">FAQ</a>)
                     </p>
                   </div>
-                  <div className="flex-row d-flex">
-                    <FontAwesome name="comments" size="2x" className="fa-fw" />
-                    <p>
+                  <div className="media">
+                    <FontAwesome
+                      name="comments"
+                      size="2x"
+                      className="fa-fw icon"
+                    />
+                    <p className="media-body">
                       You get added to our dedicated{" "}
                       <strong>Givers channel</strong> on{" "}
                       <a href="../join/">Riot and Slack</a>
                     </p>
                   </div>
-                  <div className="flex-row d-flex">
-                    <FontAwesome name="bolt" size="2x" className="fa-fw" />{" "}
-                    <p>
+                  <div className="media">
+                    <FontAwesome name="bolt" size="2x" className="fa-fw icon" />{" "}
+                    <p className="media-body">
                       You are <span>in control</span> - decide to give to our
                       DAC or directly to a specific Campaign or Milestone<sup>
                         <a href="#footnotes">3</a>
                       </sup>
                     </p>
                   </div>
-                  <div className="flex-row d-flex">
-                    <FontAwesome name="eye" size="2x" className="fa-fw" />
-                    <p>
+                  <div className="media">
+                    <FontAwesome name="eye" size="2x" className="fa-fw icon" />
+                    <p className="media-body">
                       You get a fully transparent insight in our organization,
                       finances and can hold us <strong>accountable</strong> for
                       decisions<sup>
@@ -559,7 +568,7 @@ class App extends Component {
               </li>
             </ul>
             <div className="row d-flex">
-              <section className="flex-column d-flex m-auto justify-content-center card-green alternatives-style">
+              <section className="flex-column d-flex m-auto justify-content-center donation-card alternatives-style">
                 <h3 className="color-white">Other ways to donate</h3>
                 <ol>
                   <li>
@@ -658,17 +667,17 @@ class App extends Component {
               <li>
                 <h5>Is Giveth recognized as an official charity? </h5>
                 <p>
-                  Giveth is a
+                  Giveth is a{" "}
                   <a href="https://medium.com/giveth/giveth-introduces-decentralized-altruistic-communities-dacs-d1155a79bdc4">
                     Decentralized Altruistic Community
-                  </a>
+                  </a>{" "}
                   and is not a registered as a charitable entity, we are however
                   registered on the blockchain ;-) We are a community-led
                   project and will not derive any direct profit from the
-                  platform. We strive to
+                  platform. We strive to{" "}
                   <a href="https://wiki.giveth.io/dac/about/">
                     model the DAC concept{" "}
-                  </a>
+                  </a>{" "}
                   as one of the first not-for-profit blockchain based entities.
                   We guarantee all funds will get recycled back into the
                   Community that is ensuring the Giveth Platform gets adopted
