@@ -318,23 +318,18 @@ class App extends Component {
             >
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="#team">
+                  <a className="nav-link" href="#donate">
                     Donate
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#team">
+                  <a className="nav-link" href="#benefits">
                     Team
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#benefits">
                     Benefits
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#instructions">
-                    Instructions
                   </a>
                 </li>
                 <li className="nav-item">
@@ -359,6 +354,7 @@ class App extends Component {
           </section>
 
           <div
+            id="donate"
             {...responsiveness}
             className="flex-row d-flex justify-content-around first middleBlock"
           >
@@ -400,6 +396,7 @@ class App extends Component {
                   <br />
                 )}
               </div>
+
               <div
                 {...maxOnMobile}
                 className="flex-column justify-content-center donationColumn"
@@ -496,7 +493,7 @@ class App extends Component {
                   could be this Giver.
                 </p>
               </li>
-              <li id="etherglade" className="text-block">
+              <li id="etherglade" className="text-block justify-content-center">
                 <h3>Why donate to Giveth?</h3>
                 <p>
                   As opposed to traditional charity, with Giveth every donation
@@ -505,6 +502,14 @@ class App extends Component {
                   good sense of the impact it made in direct communication with
                   your beneficiary.
                 </p>
+                <div className="flex-row d-flex justify-content-center">
+                  <img
+                    src="/img/giveth-full-logo.svg"
+                    width="150px"
+                    height="auto"
+                    className="logo"
+                  />
+                </div>
               </li>
               <li id="benefits" className="text-block">
                 <h3>Benefits</h3>
@@ -609,7 +614,12 @@ class App extends Component {
                       <a href="#footnotes">1</a>
                     </sup>
                     <div className="flex-column d-flex justify-content-center padding-top">
-                      GET BACK SHAPESHIFT
+                      <a
+                        href="https://shapeshift.io"
+                        className="btn btn-secondary m-auto"
+                      >
+                        Shapeshift.io
+                      </a>
                     </div>
                   </li>
                 </ol>
@@ -629,8 +639,8 @@ class App extends Component {
                     tokens directly, but if you donate ETH from MEW, Metamask,
                     Mist or Parity you'll receive Giveth Governance Tokens (GGT)
                     in return! GGT will become part of our decentralized
-                    governance system - ask us on Slack or Riot if you have any
-                    doubts.
+                    governance system - ask us on Slack or Riot for more
+                    information.
                   </em>
                 </p>
                 <p>
