@@ -354,20 +354,125 @@ class App extends Component {
                 <h1 className="display-3">
                   Help us Build the Future of Giving
                 </h1>
-
-                <div className="flex-column d-flex justify-content-center">
-                  <a
-                    className="btn btn-secondary color-purple"
-                    href="https://www.mycrypto.com/?to=0x5ADF43DD006c6C36506e2b2DFA352E60002d22Dc&gaslimit=23000#send-transaction"
-                  >
-                    Donate <i className="fab fa-ethereum" /> directly
-                    <br />
-                    via MyCrypto
-                  </a>
-                </div>
               </div>
             </div>
           </section>
+
+          <div
+            {...responsiveness}
+            className="flex-row d-flex justify-content-around background-color first"
+          >
+            <div
+              {...responsiveness}
+              className="flex-row d-flex middleBlock justify-content-around"
+            >
+              <div
+                {...maxOnMobile}
+                className="flex-column justify-content-center donationColumn"
+              >
+                <h1>
+                  Ways to <span className="special">Donate</span>
+                </h1>
+                <p>
+                  Development for DAppNode is exclusively done in an open-source
+                  fashion. You can donate directly to development via MetaMask
+                  or sending ETH to the donation address.
+                </p>
+                {candonate ? (
+                  <div>
+                    <h6 {...hiddenOnMobile}>
+                      Publicly: Send a transaction via Metamask with your Name
+                      as a message{" "}
+                    </h6>
+
+                    <form {...hiddenOnMobile} onSubmit={this.handleDonate}>
+                      <input
+                        type="text"
+                        placeholder="ETH to donate"
+                        name="amount"
+                      />
+                      <input type="text" placeholder="Message" name="message" />
+                      <button className="btn btn-light">Send</button>
+                    </form>
+                  </div>
+                ) : (
+                  <br />
+                )}
+              </div>
+              <div
+                {...maxOnMobile}
+                className="flex-column justify-content-center donationColumn"
+              >
+                <h6>Privately: Send directly to the donation address</h6>
+                <img
+                  src="/img/giveth-qr.svg"
+                  className="qr-code"
+                  alt="Donation QR Code"
+                />
+                <div className="word-wrap">
+                  <strong className="color-main-accent">
+                    {donationAddress}
+                  </strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div {...responsiveness} className="flex-row d-flex amount bg-blue">
+            <div className="flex-column margin">
+              <strong>Amount donated </strong>
+              <h3 className="color-main-accent">
+                {this.state.totalAmount} ETH
+              </h3>
+            </div>
+          </div>
+
+          <div
+            {...responsiveness}
+            className="flex-row d-flex justify-content-around"
+          >
+            <div className="flex-column leaderboard">
+              <Collapsible trigger="Show the leaderboard">
+                <table id="leaderboard" className="table">
+                  <thead className="pagination-centered">
+                    <tr>
+                      <th>Rank</th>
+                      <th>Address</th>
+                      <th>Value</th>
+                      <th>Message</th>
+                      <th>Tx Link</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.ethlist
+                      .filter(isSearched(this.state.searchTerm))
+                      .map(item => (
+                        <tr key={item.hash} className="Entry">
+                          <td>{item.rank} </td>
+                          <td>{item.from} </td>
+                          <td>{myweb3.utils.fromWei(item.value)} ETH</td>
+                          <td>
+                            <Emojify>
+                              {item.input.length &&
+                                myweb3.utils.hexToAscii(item.input)}
+                            </Emojify>
+                          </td>
+                          <td className="table-tx-header">
+                            {item.hash.map((txHash, index) => (
+                              <a
+                                key={index}
+                                href={"https://etherscan.io/tx/" + txHash}
+                              >
+                                [{index + 1}]
+                              </a>
+                            ))}
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </Collapsible>
+            </div>
+          </div>
 
           <section id="donations" className="background-white">
             <ul className="flex-row d-flex features flex-wrap justify-content-around">
@@ -660,127 +765,6 @@ class App extends Component {
             </ul>
           </section>
         </main>
-
-        <div
-          {...responsiveness}
-          className="flex-row d-flex justify-content-around background-color first"
-        >
-          <div
-            {...responsiveness}
-            className="flex-row d-flex middleBlock justify-content-around"
-          >
-            <div
-              {...maxOnMobile}
-              className="flex-column justify-content-center donationColumn"
-            >
-              <h1>
-                Ways to <span className="special">Donate</span>
-              </h1>
-              <p>
-                Development for DAppNode is exclusively done in an open-source
-                fashion. You can donate directly to development via MetaMask or
-                sending ETH to the donation address.
-              </p>
-              {candonate ? (
-                <div>
-                  <h6 {...hiddenOnMobile}>
-                    Publicly: Send a transaction via Metamask with your Name as
-                    a message{" "}
-                  </h6>
-
-                  <form {...hiddenOnMobile} onSubmit={this.handleDonate}>
-                    <input
-                      type="text"
-                      placeholder="ETH to donate"
-                      name="amount"
-                    />
-                    <input type="text" placeholder="Message" name="message" />
-                    <button className="btn btn-light">Send</button>
-                  </form>
-                </div>
-              ) : (
-                <br />
-              )}
-            </div>
-            <div
-              {...maxOnMobile}
-              className="flex-column justify-content-center donationColumn"
-            >
-              <h6>Privately: Send directly to the donation address</h6>
-              <img
-                src="/img/giveth-qr.svg"
-                className="qr-code"
-                alt="Donation QR Code"
-              />
-              <div className="word-wrap">
-                <strong className="color-main-accent">{donationAddress}</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div {...responsiveness} className="flex-row d-flex amount bg-blue">
-          <div className="flex-column margin">
-            <strong>Amount donated </strong>
-            <h3 className="color-main-accent">{this.state.totalAmount} ETH</h3>
-          </div>
-          <div className="flex-column margin">
-            <form className="Search">
-              <input
-                type="text"
-                onChange={this.onSearchChange}
-                placeholder="filter leaderboard"
-              />
-            </form>
-          </div>
-        </div>
-
-        <div
-          {...responsiveness}
-          className="flex-row d-flex justify-content-around"
-        >
-          <div className="flex-column leaderboard">
-            <Collapsible trigger="Hide the leaderboard" open>
-              <table className="table">
-                <thead className="pagination-centered">
-                  <tr>
-                    <th>Rank</th>
-                    <th>Address</th>
-                    <th>Value</th>
-                    <th>Message</th>
-                    <th>Tx Link</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.ethlist
-                    .filter(isSearched(this.state.searchTerm))
-                    .map(item => (
-                      <tr key={item.hash} className="Entry">
-                        <td>{item.rank} </td>
-                        <td>{item.from} </td>
-                        <td>{myweb3.utils.fromWei(item.value)} ETH</td>
-                        <td>
-                          <Emojify>
-                            {item.input.length &&
-                              myweb3.utils.hexToAscii(item.input)}
-                          </Emojify>
-                        </td>
-                        <td className="table-tx-header">
-                          {item.hash.map((txHash, index) => (
-                            <a
-                              key={index}
-                              href={"https://etherscan.io/tx/" + txHash}
-                            >
-                              [{index + 1}]
-                            </a>
-                          ))}
-                        </td>
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-            </Collapsible>
-          </div>
-        </div>
 
         <footer id="footer" className="container-fluid background-black">
           <ul className="col d-flex justify-content-center hide-list-style flex-wrap">
