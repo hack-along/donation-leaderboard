@@ -397,7 +397,7 @@ class App extends Component {
               <div className="card-body">
                 <div className="card-text">
                   Finally, to <strong>lock down your spot</strong>, please cover
-                  the dues of <strong>1 ETH</strong> per person - instructions
+                  the dues of <strong>2 ETH</strong> per person - instructions
                   and address to the right.<br />
                 </div>
               </div>
