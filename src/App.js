@@ -397,7 +397,7 @@ class App extends Component {
               <div className="card-body">
                 <div className="card-text">
                   Finally, to <strong>lock down your spot</strong>, please cover
-                  the dues of <strong>2 ETH</strong> per person - instructions
+                  the dues of <strong>4 ETH</strong> per person - instructions
                   and address to the right.<br />
                 </div>
               </div>
@@ -448,8 +448,8 @@ class App extends Component {
                   Camp Decentral is being run for the second year as a campaign
                   with the Giveth platform - Transparently tracking campees
                   pay-ins and outs (coming soon!)<br />
-                  <a href="https://alpha.giveth.io/" className="btn btn-light">
-                    Giveth <strong>Alpha</strong>
+                  <a href="https://beta.giveth.io/" className="btn btn-light">
+                    Giveth <strong>Beta</strong>
                   </a>
                 </div>
               </div>
