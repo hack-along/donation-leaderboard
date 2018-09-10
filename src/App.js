@@ -341,7 +341,8 @@ class App extends Component {
                 <div className="card-text">
                   You will need a ticket for Burning Man! To get a ticket,
                   please refer to the Internet and mostly the main Burning Man
-                  Website<br />
+                  Website
+                  <br />
                   <a href="https://burningman.org/" className="btn btn-light">
                     Official Website
                   </a>
@@ -360,7 +361,8 @@ class App extends Component {
                 <div className="card-text">
                   If you <strong>have a ticket</strong> and are interested to{" "}
                   <strong>join camp decentral</strong> at burning man, join us
-                  in our chatroom and say "Hello!" on<br />
+                  in our chatroom and say "Hello!" on
+                  <br />
                   <a
                     href="https://riot.im/app/#/room/#DECENTRAL:matrix.org"
                     className="btn btn-success"
@@ -378,7 +380,8 @@ class App extends Component {
               <div className="card-body">
                 <div className="card-text">
                   Once you are invited by us, we need you to fill out a form for
-                  our organizational purposes.<br />
+                  our organizational purposes.
+                  <br />
                   <strong>NO EXCEPTIONS!!!</strong>
                   <br />
                   <a
@@ -398,7 +401,8 @@ class App extends Component {
                 <div className="card-text">
                   Finally, to <strong>lock down your spot</strong>, please cover
                   the dues of <strong>1 ETH</strong> per person - instructions
-                  and address to the right.<br />
+                  and address to the right.
+                  <br />
                 </div>
               </div>
             </li>
@@ -408,7 +412,8 @@ class App extends Component {
               </div>
               <div className="card-body">
                 <div className="card-text">
-                  You can find more detailed info on the Camp Decentral FAQ.<br />
+                  You can find more detailed info on the Camp Decentral FAQ.
+                  <br />
                   <a
                     href="https://docs.google.com/document/d/195NoXL0nC1RJlED0nPJhVKu42qSGGUkv32AU_lqRT8M/edit?usp=sharing"
                     className="btn btn-info"
@@ -425,7 +430,8 @@ class App extends Component {
               <div className="card-body">
                 <div className="card-text">
                   We host 80+ hours of talks on the Playa. To register as a
-                  speaker, please use the form below.<br />
+                  speaker, please use the form below.
+                  <br />
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSeAWacQH0ujMBTJkQozLegFqB8wpe6fifOKBqwg87p_RL29VQ/viewform"
                     className="btn btn-info"
@@ -447,9 +453,10 @@ class App extends Component {
                 <div className="card-text">
                   Camp Decentral is being run for the second year as a campaign
                   with the Giveth platform - Transparently tracking campees
-                  pay-ins and outs (coming soon!)<br />
-                  <a href="https://alpha.giveth.io/" className="btn btn-light">
-                    Giveth <strong>Alpha</strong>
+                  pay-ins and outs (coming soon!)
+                  <br />
+                  <a href="https://beta.giveth.io/" className="btn btn-light">
+                    Giveth <strong>Beta</strong>
                   </a>
                 </div>
               </div>
